@@ -35,7 +35,7 @@ export default function Navigation() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-background/95 backdrop-blur-md shadow-lg border-b border-border'
+          ? 'bg-black/95 backdrop-blur-md shadow-lg border-b border-neutral-800'
           : 'bg-transparent'
       }`}
     >
@@ -48,10 +48,10 @@ export default function Navigation() {
               whileTap={{ scale: 0.95 }}
               className="text-2xl font-bold"
             >
-              <span className="text-primary">U</span>
-              <span className="text-text">E</span>
+              <span className="text-white">U</span>
+              <span className="text-neutral-400">E</span>
             </motion.div>
-            <span className="hidden sm:block text-text font-semibold">
+            <span className="hidden sm:block text-white font-semibold">
               Uche Edwin
             </span>
           </Link>
@@ -64,15 +64,15 @@ export default function Navigation() {
                 href={link.href}
                 className={`relative px-4 py-2 text-sm font-medium transition-colors ${
                   pathname === link.href
-                    ? 'text-primary'
-                    : 'text-text-muted hover:text-text'
+                    ? 'text-white'
+                    : 'text-neutral-400 hover:text-white'
                 }`}
               >
                 {link.label}
                 {pathname === link.href && (
                   <motion.div
                     layoutId="activeNav"
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-white"
                     initial={false}
                     transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                   />
@@ -89,7 +89,7 @@ export default function Navigation() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 text-text-muted hover:text-text transition-colors"
+            className="md:hidden p-2 text-neutral-400 hover:text-white transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -106,7 +106,7 @@ export default function Navigation() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-background/95 backdrop-blur-md border-b border-border"
+            className="md:hidden bg-black/95 backdrop-blur-md border-b border-neutral-800"
           >
             <div className="px-4 py-4 space-y-2">
               {navLinks.map((link) => (
@@ -115,8 +115,8 @@ export default function Navigation() {
                   href={link.href}
                   className={`block px-4 py-3 rounded-lg text-base font-medium transition-colors ${
                     pathname === link.href
-                      ? 'bg-primary/10 text-primary'
-                      : 'text-text-muted hover:bg-card hover:text-text'
+                      ? 'bg-white/10 text-white'
+                      : 'text-neutral-400 hover:bg-neutral-900 hover:text-white'
                   }`}
                 >
                   {link.label}

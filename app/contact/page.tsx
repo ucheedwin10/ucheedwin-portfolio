@@ -113,7 +113,7 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="min-h-screen py-20">
+    <div className="min-h-screen py-20 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -124,7 +124,7 @@ export default function ContactPage() {
           <h1 className="text-4xl sm:text-5xl font-bold mb-4">
             Let&apos;s <span className="gradient-text">Connect</span>
           </h1>
-          <p className="text-text-muted max-w-2xl mx-auto text-lg">
+          <p className="text-neutral-400 max-w-2xl mx-auto text-lg">
             Have a project in mind, want me to speak at your event, or just want to say hi? I&apos;d love to hear from you.
           </p>
         </motion.div>
@@ -149,22 +149,22 @@ export default function ContactPage() {
                     whileHover={{ x: 4 }}
                     className="flex items-center gap-4"
                   >
-                    <div className="p-3 bg-primary/10 rounded-xl">
-                      <info.icon className="w-5 h-5 text-primary" />
+                    <div className="p-3 bg-white/10 rounded-xl">
+                      <info.icon className="w-5 h-5 text-white" />
                     </div>
                     <div>
-                      <p className="text-text-muted text-sm">{info.label}</p>
+                      <p className="text-neutral-400 text-sm">{info.label}</p>
                       {info.href ? (
                         <a
                           href={info.href}
                           target={info.href.startsWith('mailto') ? undefined : '_blank'}
                           rel="noopener noreferrer"
-                          className="text-text font-medium hover:text-primary transition-colors"
+                          className="text-white font-medium hover:text-neutral-300 transition-colors"
                         >
                           {info.value}
                         </a>
                       ) : (
-                        <p className="text-text font-medium">{info.value}</p>
+                        <p className="text-white font-medium">{info.value}</p>
                       )}
                     </div>
                   </motion.div>
@@ -185,15 +185,15 @@ export default function ContactPage() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 + index * 0.1 }}
                     whileHover={{ y: -2 }}
-                    className="p-4 bg-card rounded-xl border border-border"
+                    className="p-4 bg-neutral-950 rounded-xl border border-neutral-800"
                   >
-                    <div className="p-2 bg-primary/10 rounded-lg w-fit mb-3">
-                      <opp.icon className="w-4 h-4 text-primary" />
+                    <div className="p-2 bg-white/10 rounded-lg w-fit mb-3">
+                      <opp.icon className="w-4 h-4 text-white" />
                     </div>
-                    <h3 className="text-text font-semibold text-sm mb-1">
+                    <h3 className="text-white font-semibold text-sm mb-1">
                       {opp.title}
                     </h3>
-                    <p className="text-text-muted text-xs">{opp.description}</p>
+                    <p className="text-neutral-400 text-xs">{opp.description}</p>
                   </motion.div>
                 ))}
               </div>
@@ -228,10 +228,10 @@ export default function ContactPage() {
                     >
                       <CheckCircle className="w-8 h-8 text-green-500" />
                     </motion.div>
-                    <h3 className="text-xl font-semibold text-text mb-2">
+                    <h3 className="text-xl font-semibold text-white mb-2">
                       Message Sent!
                     </h3>
-                    <p className="text-text-muted">
+                    <p className="text-neutral-400">
                       Thanks for reaching out. I&apos;ll get back to you soon!
                     </p>
                   </motion.div>
@@ -247,7 +247,7 @@ export default function ContactPage() {
                     <div>
                       <label
                         htmlFor="name"
-                        className="block text-text-muted text-sm mb-2"
+                        className="block text-neutral-400 text-sm mb-2"
                       >
                         Name
                       </label>
@@ -258,7 +258,7 @@ export default function ContactPage() {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 bg-background border border-border rounded-lg text-text placeholder-text-muted focus:outline-none focus:border-primary transition-colors"
+                        className="w-full px-4 py-3 bg-neutral-900 border border-neutral-800 rounded-lg text-white placeholder-neutral-500 focus:outline-none focus:border-neutral-600 transition-colors"
                         placeholder="Your name"
                       />
                     </div>
@@ -267,7 +267,7 @@ export default function ContactPage() {
                     <div>
                       <label
                         htmlFor="email"
-                        className="block text-text-muted text-sm mb-2"
+                        className="block text-neutral-400 text-sm mb-2"
                       >
                         Email
                       </label>
@@ -278,7 +278,7 @@ export default function ContactPage() {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 bg-background border border-border rounded-lg text-text placeholder-text-muted focus:outline-none focus:border-primary transition-colors"
+                        className="w-full px-4 py-3 bg-neutral-900 border border-neutral-800 rounded-lg text-white placeholder-neutral-500 focus:outline-none focus:border-neutral-600 transition-colors"
                         placeholder="your@email.com"
                       />
                     </div>
@@ -287,7 +287,7 @@ export default function ContactPage() {
                     <div>
                       <label
                         htmlFor="subject"
-                        className="block text-text-muted text-sm mb-2"
+                        className="block text-neutral-400 text-sm mb-2"
                       >
                         Subject
                       </label>
@@ -297,7 +297,7 @@ export default function ContactPage() {
                         value={formData.subject}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 bg-background border border-border rounded-lg text-text focus:outline-none focus:border-primary transition-colors appearance-none cursor-pointer"
+                        className="w-full px-4 py-3 bg-neutral-900 border border-neutral-800 rounded-lg text-white focus:outline-none focus:border-neutral-600 transition-colors appearance-none cursor-pointer"
                       >
                         <option value="" disabled>
                           Select a subject
@@ -314,7 +314,7 @@ export default function ContactPage() {
                     <div>
                       <label
                         htmlFor="message"
-                        className="block text-text-muted text-sm mb-2"
+                        className="block text-neutral-400 text-sm mb-2"
                       >
                         Message
                       </label>
@@ -325,7 +325,7 @@ export default function ContactPage() {
                         onChange={handleChange}
                         required
                         rows={5}
-                        className="w-full px-4 py-3 bg-background border border-border rounded-lg text-text placeholder-text-muted focus:outline-none focus:border-primary transition-colors resize-none"
+                        className="w-full px-4 py-3 bg-neutral-900 border border-neutral-800 rounded-lg text-white placeholder-neutral-500 focus:outline-none focus:border-neutral-600 transition-colors resize-none"
                         placeholder="Tell me about your project or opportunity..."
                       />
                     </div>
@@ -343,7 +343,7 @@ export default function ContactPage() {
                           <motion.div
                             animate={{ rotate: 360 }}
                             transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
-                            className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full"
+                            className="w-5 h-5 border-2 border-black/30 border-t-black rounded-full"
                           />
                           Sending...
                         </>

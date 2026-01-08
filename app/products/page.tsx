@@ -65,7 +65,7 @@ const products = [
     description: 'Large Language Model specifically trained for African languages, focusing on Yoruba and Hausa. Winner of the Project Technical Delivery Award (2024).',
     category: 'AI Products',
     status: 'Production',
-    statusColor: 'bg-primary',
+    statusColor: 'bg-white',
     icon: Zap,
     tech: ['Python', 'LLM Training', 'NLP'],
     metrics: [
@@ -145,7 +145,7 @@ export default function ProductsPage() {
       : products.filter((product) => product.category === activeCategory)
 
   return (
-    <div className="min-h-screen py-20">
+    <div className="min-h-screen py-20 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -156,7 +156,7 @@ export default function ProductsPage() {
           <h1 className="text-4xl sm:text-5xl font-bold mb-4">
             My <span className="gradient-text">Products</span>
           </h1>
-          <p className="text-text-muted max-w-2xl mx-auto text-lg">
+          <p className="text-neutral-400 max-w-2xl mx-auto text-lg">
             AI products I&apos;ve built and shipped - from concept to production. Each solving real problems with measurable impact.
           </p>
         </motion.div>
@@ -176,8 +176,8 @@ export default function ProductsPage() {
               whileTap={{ scale: 0.95 }}
               className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
                 activeCategory === category
-                  ? 'bg-primary text-white'
-                  : 'bg-card border border-border text-text-muted hover:text-text hover:border-primary'
+                  ? 'bg-white text-black'
+                  : 'bg-neutral-900 border border-neutral-800 text-neutral-400 hover:text-white hover:border-neutral-600'
               }`}
             >
               {category}
@@ -200,21 +200,21 @@ export default function ProductsPage() {
                 <motion.div
                   whileHover={{ y: -8 }}
                   className={`card p-6 h-full flex flex-col ${
-                    product.featured ? 'ring-1 ring-primary/30' : ''
+                    product.featured ? 'ring-1 ring-white/20' : ''
                   }`}
                 >
                   {/* Header */}
                   <div className="flex items-start justify-between mb-4">
-                    <div className="p-3 bg-primary/10 rounded-xl">
-                      <product.icon className="w-6 h-6 text-primary" />
+                    <div className="p-3 bg-white/10 rounded-xl">
+                      <product.icon className="w-6 h-6 text-white" />
                     </div>
                     <div className="flex items-center gap-2">
                       {product.featured && (
-                        <span className="px-2 py-1 bg-primary/20 text-primary text-xs font-medium rounded-full">
+                        <span className="px-2 py-1 bg-white/10 text-white text-xs font-medium rounded-full">
                           Featured
                         </span>
                       )}
-                      <span className="flex items-center gap-1.5 text-xs font-medium text-text-muted">
+                      <span className="flex items-center gap-1.5 text-xs font-medium text-neutral-400">
                         <span className={`w-2 h-2 ${product.statusColor} rounded-full`} />
                         {product.status}
                       </span>
@@ -222,13 +222,13 @@ export default function ProductsPage() {
                   </div>
 
                   {/* Content */}
-                  <h3 className="text-xl font-semibold text-text mb-1">
+                  <h3 className="text-xl font-semibold text-white mb-1">
                     {product.name}
                   </h3>
-                  <p className="text-primary text-sm font-medium mb-3">
+                  <p className="text-neutral-300 text-sm font-medium mb-3">
                     {product.tagline}
                   </p>
-                  <p className="text-text-muted text-sm mb-4 flex-grow">
+                  <p className="text-neutral-400 text-sm mb-4 flex-grow">
                     {product.description}
                   </p>
 
@@ -237,12 +237,12 @@ export default function ProductsPage() {
                     {product.metrics.map((metric) => (
                       <div
                         key={metric.label}
-                        className="text-center p-2 bg-background rounded-lg"
+                        className="text-center p-2 bg-neutral-900 rounded-lg"
                       >
-                        <div className="text-lg font-bold text-text">
+                        <div className="text-lg font-bold text-white">
                           {metric.value}
                         </div>
-                        <div className="text-xs text-text-muted">
+                        <div className="text-xs text-neutral-500">
                           {metric.label}
                         </div>
                       </div>
@@ -254,7 +254,7 @@ export default function ProductsPage() {
                     {product.tech.map((tech) => (
                       <span
                         key={tech}
-                        className="px-2 py-1 bg-background text-text-muted text-xs rounded-md"
+                        className="px-2 py-1 bg-neutral-900 text-neutral-400 text-xs rounded-md"
                       >
                         {tech}
                       </span>
@@ -262,8 +262,8 @@ export default function ProductsPage() {
                   </div>
 
                   {/* Impact */}
-                  <div className="flex items-center gap-2 text-sm text-text-muted mb-4">
-                    <TrendingUp size={14} className="text-primary" />
+                  <div className="flex items-center gap-2 text-sm text-neutral-400 mb-4">
+                    <TrendingUp size={14} className="text-white" />
                     {product.impact}
                   </div>
 
@@ -273,7 +273,7 @@ export default function ProductsPage() {
                       href={product.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-primary text-sm font-medium hover:underline"
+                      className="inline-flex items-center gap-2 text-white text-sm font-medium hover:text-neutral-300 transition-colors"
                     >
                       View Project
                       <ExternalLink size={14} />
@@ -290,39 +290,39 @@ export default function ProductsPage() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-20 p-8 bg-card/50 rounded-2xl border border-border"
+          className="mt-20 p-8 bg-neutral-950 rounded-2xl border border-neutral-800"
         >
           <h2 className="text-2xl font-bold text-center mb-8">
             Product <span className="gradient-text">Impact Summary</span>
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div className="text-center">
-              <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-xl mx-auto mb-3">
-                <Users className="w-6 h-6 text-primary" />
+              <div className="flex items-center justify-center w-12 h-12 bg-white/10 rounded-xl mx-auto mb-3">
+                <Users className="w-6 h-6 text-white" />
               </div>
-              <div className="text-3xl font-bold text-text">8M+</div>
-              <div className="text-text-muted text-sm">Users Reached</div>
+              <div className="text-3xl font-bold text-white">8M+</div>
+              <div className="text-neutral-400 text-sm">Users Reached</div>
             </div>
             <div className="text-center">
-              <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-xl mx-auto mb-3">
-                <Globe className="w-6 h-6 text-primary" />
+              <div className="flex items-center justify-center w-12 h-12 bg-white/10 rounded-xl mx-auto mb-3">
+                <Globe className="w-6 h-6 text-white" />
               </div>
-              <div className="text-3xl font-bold text-text">3</div>
-              <div className="text-text-muted text-sm">States Deployed</div>
+              <div className="text-3xl font-bold text-white">3</div>
+              <div className="text-neutral-400 text-sm">States Deployed</div>
             </div>
             <div className="text-center">
-              <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-xl mx-auto mb-3">
-                <Clock className="w-6 h-6 text-primary" />
+              <div className="flex items-center justify-center w-12 h-12 bg-white/10 rounded-xl mx-auto mb-3">
+                <Clock className="w-6 h-6 text-white" />
               </div>
-              <div className="text-3xl font-bold text-text">90%</div>
-              <div className="text-text-muted text-sm">Time Saved</div>
+              <div className="text-3xl font-bold text-white">90%</div>
+              <div className="text-neutral-400 text-sm">Time Saved</div>
             </div>
             <div className="text-center">
-              <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-xl mx-auto mb-3">
-                <CheckCircle className="w-6 h-6 text-primary" />
+              <div className="flex items-center justify-center w-12 h-12 bg-white/10 rounded-xl mx-auto mb-3">
+                <CheckCircle className="w-6 h-6 text-white" />
               </div>
-              <div className="text-3xl font-bold text-text">5+</div>
-              <div className="text-text-muted text-sm">Products Shipped</div>
+              <div className="text-3xl font-bold text-white">5+</div>
+              <div className="text-neutral-400 text-sm">Products Shipped</div>
             </div>
           </div>
         </motion.div>

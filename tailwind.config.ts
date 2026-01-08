@@ -9,13 +9,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: '#F97316',
-        background: '#0F172A',
-        card: '#1E293B',
-        'card-hover': '#273548',
-        text: '#F1F5F9',
-        'text-muted': '#94A3B8',
-        border: '#334155',
+        primary: '#FFFFFF',
+        accent: '#e5e5e5',
+        background: '#000000',
+        card: '#0a0a0a',
+        'card-hover': '#111111',
+        text: '#FFFFFF',
+        'text-muted': '#a3a3a3',
+        border: '#1a1a1a',
+        'border-hover': '#333333',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],

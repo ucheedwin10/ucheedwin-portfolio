@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import {
   ArrowRight,
   Briefcase,
@@ -57,7 +58,7 @@ const featuredProducts = [
     name: 'AfroLLM 1.0',
     description: 'Language model for Yoruba & Hausa',
     status: 'Production',
-    statusColor: 'bg-primary',
+    statusColor: 'bg-white',
     icon: Zap,
     link: '/products',
   },
@@ -73,11 +74,11 @@ export default function HomePage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center gradient-bg overflow-hidden">
+      <section className="relative min-h-screen flex items-center gradient-bg overflow-hidden">
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float" />
-          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl animate-float" />
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-white/3 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -85,85 +86,99 @@ export default function HomePage() {
             initial="initial"
             animate="animate"
             variants={staggerContainer}
-            className="grid lg:grid-cols-2 gap-12 items-center"
+            className="flex flex-col items-center text-center"
           >
-            {/* Content */}
-            <div className="space-y-8">
-              <motion.div variants={fadeInUp} className="space-y-4">
-                <motion.span
-                  className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium"
-                  whileHover={{ scale: 1.05 }}
-                >
-                  Technical AI Product Manager
-                </motion.span>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-                  <span className="text-text">Hi, I&apos;m </span>
-                  <span className="gradient-text">Uche Edwin</span>
-                </h1>
-                <p className="text-xl sm:text-2xl text-text-muted max-w-xl">
-                  I build and ship AI products.{' '}
-                  <span className="text-text">
-                    From AfroLLM to GenAI Governance to Hont.
-                  </span>
-                </p>
-              </motion.div>
-
-              <motion.div variants={fadeInUp} className="flex flex-wrap gap-4">
-                <Link href="/products">
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="btn-primary flex items-center gap-2"
-                  >
-                    View My Work
-                    <ArrowRight size={18} />
-                  </motion.button>
-                </Link>
-                <Link href="/contact">
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="btn-secondary flex items-center gap-2"
-                  >
-                    Let&apos;s Talk
-                  </motion.button>
-                </Link>
-              </motion.div>
-            </div>
-
-            {/* Profile Image Placeholder */}
+            {/* Profile Image */}
             <motion.div
               variants={fadeInUp}
-              className="relative hidden lg:block"
+              className="relative mb-8"
             >
-              <div className="relative w-80 h-80 mx-auto">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary to-primary/50 rounded-full blur-2xl opacity-30 animate-pulse" />
-                <div className="relative w-full h-full rounded-full bg-gradient-to-br from-card to-background border-2 border-primary/30 flex items-center justify-center overflow-hidden">
-                  <div className="text-8xl font-bold gradient-text">UE</div>
+              <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56">
+                {/* Glow effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-white/5 rounded-full blur-2xl" />
+                {/* Profile photo */}
+                <div className="relative w-full h-full rounded-full border-2 border-neutral-700 overflow-hidden">
+                  <Image
+                    src="/profile.jpg"
+                    alt="Uche Edwin"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
                 </div>
-                {/* Floating badges */}
-                <motion.div
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{ duration: 3, repeat: Infinity }}
-                  className="absolute -top-4 -right-4 bg-card border border-border rounded-lg px-3 py-2 shadow-lg"
-                >
-                  <span className="text-sm font-medium text-primary">AI Products</span>
-                </motion.div>
-                <motion.div
-                  animate={{ y: [0, 10, 0] }}
-                  transition={{ duration: 3, repeat: Infinity, delay: 1 }}
-                  className="absolute -bottom-4 -left-4 bg-card border border-border rounded-lg px-3 py-2 shadow-lg"
-                >
-                  <span className="text-sm font-medium text-primary">Technical PM</span>
-                </motion.div>
               </div>
+            </motion.div>
+
+            {/* Content */}
+            <motion.div variants={fadeInUp} className="space-y-6 max-w-4xl">
+              <motion.span
+                className="inline-block px-4 py-2 bg-white/10 text-white rounded-full text-sm font-medium border border-white/10"
+                whileHover={{ scale: 1.05 }}
+              >
+                Technical AI Product Manager
+              </motion.span>
+
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+                <span className="text-white">Hi, I&apos;m </span>
+                <span className="gradient-text">Uche Edwin</span>
+              </h1>
+
+              {/* Expanded Hero Text */}
+              <div className="space-y-4 text-text-muted text-base sm:text-lg leading-relaxed max-w-3xl mx-auto">
+                <p className="text-white text-xl sm:text-2xl font-medium">
+                  I&apos;m a Technical AI Product Manager who doesn&apos;t just manage products—I build them.
+                </p>
+
+                <p>
+                  Over the past 7 years, I&apos;ve led the development and deployment of AI products that solve real problems: from <span className="text-white">AfroLLM</span> (a language model for African languages) to <span className="text-white">GenAI Governance</span> platforms used by Nigerian state governments, to <span className="text-white">Hont</span> (an AI scholarship assistant built in a weekend).
+                </p>
+
+                <p>
+                  What makes me different? <span className="text-white">I code.</span> I learned full-stack development because I wanted to truly understand the technology I was building. Now I can ship MVPs solo, debug alongside engineers, and make informed architecture decisions.
+                </p>
+
+                <p>
+                  I believe the best products come from deeply understanding both the problem and the solution. That&apos;s why I&apos;ve spent thousands of hours not just managing roadmaps, but writing code, training models, and shipping features.
+                </p>
+
+                <p>
+                  Currently leading AI product development at <span className="text-white">EqualyzAI</span>, speaking at global conferences about AI governance and African language technology, and building side projects that scratch my own itches.
+                </p>
+
+                <p className="text-white text-xl font-medium pt-2">
+                  Let&apos;s build something remarkable together.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* CTAs */}
+            <motion.div variants={fadeInUp} className="flex flex-wrap justify-center gap-4 mt-10">
+              <Link href="/products">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="btn-primary flex items-center gap-2"
+                >
+                  View My Work
+                  <ArrowRight size={18} />
+                </motion.button>
+              </Link>
+              <Link href="/contact">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="btn-secondary flex items-center gap-2"
+                >
+                  Let&apos;s Talk
+                </motion.button>
+              </Link>
             </motion.div>
           </motion.div>
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-card/50 border-y border-border">
+      <section className="py-16 bg-neutral-950 border-y border-neutral-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -181,10 +196,10 @@ export default function HomePage() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="text-center"
               >
-                <div className="inline-flex items-center justify-center w-12 h-12 bg-primary/10 rounded-xl mb-4">
-                  <stat.icon className="w-6 h-6 text-primary" />
+                <div className="inline-flex items-center justify-center w-12 h-12 bg-white/10 rounded-xl mb-4">
+                  <stat.icon className="w-6 h-6 text-white" />
                 </div>
-                <div className="text-3xl sm:text-4xl font-bold text-text mb-1">
+                <div className="text-3xl sm:text-4xl font-bold text-white mb-1">
                   {stat.value}
                 </div>
                 <div className="text-text-muted text-sm">{stat.label}</div>
@@ -195,7 +210,7 @@ export default function HomePage() {
       </section>
 
       {/* Featured Products Section */}
-      <section className="py-20">
+      <section className="py-20 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -226,24 +241,21 @@ export default function HomePage() {
                     className="card p-6 h-full group cursor-pointer"
                   >
                     <div className="flex items-start justify-between mb-4">
-                      <div className="p-3 bg-primary/10 rounded-xl">
-                        <product.icon className="w-6 h-6 text-primary" />
+                      <div className="p-3 bg-white/10 rounded-xl">
+                        <product.icon className="w-6 h-6 text-white" />
                       </div>
-                      <span
-                        className={`px-3 py-1 ${product.statusColor}/20 text-xs font-medium rounded-full`}
-                        style={{ color: product.statusColor.replace('bg-', '') }}
-                      >
-                        <span className={`inline-block w-2 h-2 ${product.statusColor} rounded-full mr-2`} />
+                      <span className="flex items-center gap-1.5 text-xs font-medium text-text-muted">
+                        <span className={`w-2 h-2 ${product.statusColor} rounded-full`} />
                         {product.status}
                       </span>
                     </div>
-                    <h3 className="text-xl font-semibold text-text mb-2 group-hover:text-primary transition-colors">
+                    <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-accent transition-colors">
                       {product.name}
                     </h3>
                     <p className="text-text-muted text-sm mb-4">
                       {product.description}
                     </p>
-                    <div className="flex items-center text-primary text-sm font-medium">
+                    <div className="flex items-center text-white text-sm font-medium">
                       Learn more
                       <ExternalLink size={14} className="ml-2 group-hover:translate-x-1 transition-transform" />
                     </div>
@@ -273,7 +285,7 @@ export default function HomePage() {
       </section>
 
       {/* Recent Speaking Section */}
-      <section className="py-20 bg-card/30">
+      <section className="py-20 bg-neutral-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -303,7 +315,7 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ scale: 1.05 }}
-                className="px-6 py-3 bg-card border border-border rounded-full text-text-muted hover:text-primary hover:border-primary transition-colors"
+                className="px-6 py-3 bg-neutral-900 border border-neutral-800 rounded-full text-text-muted hover:text-white hover:border-neutral-600 transition-colors"
               >
                 <Mic className="inline-block w-4 h-4 mr-2" />
                 {event}
@@ -331,17 +343,17 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20">
+      <section className="py-20 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-primary/20 to-primary/5 border border-primary/20 p-8 sm:p-12 text-center"
+            className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-neutral-900 to-neutral-950 border border-neutral-800 p-8 sm:p-12 text-center"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent" />
             <div className="relative">
-              <Users className="w-12 h-12 text-primary mx-auto mb-6" />
+              <Users className="w-12 h-12 text-white mx-auto mb-6" />
               <h2 className="text-3xl sm:text-4xl font-bold mb-4">
                 Let&apos;s Build Something <span className="gradient-text">Together</span>
               </h2>

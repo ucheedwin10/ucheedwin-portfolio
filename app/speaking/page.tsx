@@ -111,7 +111,7 @@ export default function SpeakingPage() {
   const years = Object.keys(speakingEvents).sort((a, b) => Number(b) - Number(a))
 
   return (
-    <div className="min-h-screen py-20">
+    <div className="min-h-screen py-20 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -122,7 +122,7 @@ export default function SpeakingPage() {
           <h1 className="text-4xl sm:text-5xl font-bold mb-4">
             Speaking <span className="gradient-text">Engagements</span>
           </h1>
-          <p className="text-text-muted max-w-2xl mx-auto text-lg">
+          <p className="text-neutral-400 max-w-2xl mx-auto text-lg">
             Sharing insights on AI products, technical leadership, and innovation at conferences and universities worldwide.
           </p>
         </motion.div>
@@ -145,12 +145,12 @@ export default function SpeakingPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 + index * 0.05 }}
-              className="text-center p-6 bg-card rounded-xl border border-border"
+              className="text-center p-6 bg-neutral-950 rounded-xl border border-neutral-800"
             >
-              <div className="text-3xl font-bold text-primary mb-1">
+              <div className="text-3xl font-bold text-white mb-1">
                 {stat.value}
               </div>
-              <div className="text-text-muted text-sm">{stat.label}</div>
+              <div className="text-neutral-400 text-sm">{stat.label}</div>
             </motion.div>
           ))}
         </motion.div>
@@ -158,7 +158,7 @@ export default function SpeakingPage() {
         {/* Timeline */}
         <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-border transform -translate-x-1/2 hidden md:block" />
+          <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-neutral-800 transform -translate-x-1/2 hidden md:block" />
 
           {years.map((year) => (
             <motion.div
@@ -175,7 +175,7 @@ export default function SpeakingPage() {
                 viewport={{ once: true }}
                 className="flex items-center justify-center mb-8"
               >
-                <span className="px-6 py-2 bg-primary text-white font-bold text-xl rounded-full shadow-lg shadow-primary/30">
+                <span className="px-6 py-2 bg-white text-black font-bold text-xl rounded-full shadow-lg">
                   {year}
                 </span>
               </motion.div>
@@ -196,7 +196,7 @@ export default function SpeakingPage() {
                     }`}
                   >
                     {/* Connector dot */}
-                    <div className="hidden md:block absolute top-6 w-4 h-4 bg-primary rounded-full border-4 border-background shadow-lg shadow-primary/30"
+                    <div className="hidden md:block absolute top-6 w-4 h-4 bg-white rounded-full border-4 border-black"
                       style={{
                         [eventIndex % 2 === 0 ? 'right' : 'left']: '-2.5rem',
                       }}
@@ -206,39 +206,39 @@ export default function SpeakingPage() {
                       whileHover={{ y: -4 }}
                       className={`card p-6 ${
                         event.highlight
-                          ? 'ring-2 ring-primary/30 bg-gradient-to-br from-card to-primary/5'
+                          ? 'ring-1 ring-white/20 bg-gradient-to-br from-neutral-900 to-neutral-950'
                           : ''
                       }`}
                     >
                       <div className="flex items-start justify-between mb-3">
                         <div className="flex items-center gap-2">
-                          <div className="p-2 bg-primary/10 rounded-lg">
-                            <Mic className="w-4 h-4 text-primary" />
+                          <div className="p-2 bg-white/10 rounded-lg">
+                            <Mic className="w-4 h-4 text-white" />
                           </div>
-                          <span className="text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded-full">
+                          <span className="text-xs font-medium text-white bg-white/10 px-2 py-1 rounded-full">
                             {event.type}
                           </span>
                         </div>
                         {event.highlight && (
-                          <span className="text-xs font-medium text-primary">
+                          <span className="text-xs font-medium text-white">
                             Highlight
                           </span>
                         )}
                       </div>
 
-                      <h3 className="text-xl font-semibold text-text mb-1">
+                      <h3 className="text-xl font-semibold text-white mb-1">
                         {event.event}
                       </h3>
-                      <p className="text-primary font-medium text-sm mb-2">
+                      <p className="text-neutral-300 font-medium text-sm mb-2">
                         &quot;{event.topic}&quot;
                       </p>
-                      <p className="text-text-muted text-sm mb-4">
+                      <p className="text-neutral-400 text-sm mb-4">
                         {event.description}
                       </p>
 
-                      <div className="flex items-center gap-4 text-text-muted text-sm">
+                      <div className="flex items-center gap-4 text-neutral-400 text-sm">
                         <span className="flex items-center gap-1">
-                          <MapPin size={14} className="text-primary" />
+                          <MapPin size={14} className="text-white" />
                           {event.location}
                         </span>
                       </div>
@@ -269,15 +269,15 @@ export default function SpeakingPage() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ y: -4 }}
-                className="p-6 bg-card rounded-xl border border-border text-center"
+                className="p-6 bg-neutral-950 rounded-xl border border-neutral-800 text-center"
               >
-                <div className="inline-flex items-center justify-center w-12 h-12 bg-primary/10 rounded-xl mb-4">
-                  <topic.icon className="w-6 h-6 text-primary" />
+                <div className="inline-flex items-center justify-center w-12 h-12 bg-white/10 rounded-xl mb-4">
+                  <topic.icon className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-lg font-semibold text-text mb-2">
+                <h3 className="text-lg font-semibold text-white mb-2">
                   {topic.title}
                 </h3>
-                <p className="text-text-muted text-sm">{topic.description}</p>
+                <p className="text-neutral-400 text-sm">{topic.description}</p>
               </motion.div>
             ))}
           </div>
@@ -288,13 +288,13 @@ export default function SpeakingPage() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-20 text-center p-8 bg-gradient-to-r from-primary/20 to-primary/5 rounded-2xl border border-primary/20"
+          className="mt-20 text-center p-8 bg-gradient-to-r from-neutral-900 to-neutral-950 rounded-2xl border border-neutral-800"
         >
-          <Mic className="w-12 h-12 text-primary mx-auto mb-4" />
+          <Mic className="w-12 h-12 text-white mx-auto mb-4" />
           <h2 className="text-2xl font-bold mb-4">
             Invite Me to <span className="gradient-text">Speak</span>
           </h2>
-          <p className="text-text-muted max-w-xl mx-auto mb-6">
+          <p className="text-neutral-400 max-w-xl mx-auto mb-6">
             Looking for a speaker on AI products, technical leadership, or AI governance? I&apos;d love to share insights with your audience.
           </p>
           <Link href="/contact">

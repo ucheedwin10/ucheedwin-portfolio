@@ -82,7 +82,7 @@ const values = [
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen py-20">
+    <div className="min-h-screen py-20 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -93,7 +93,7 @@ export default function AboutPage() {
           <h1 className="text-4xl sm:text-5xl font-bold mb-4">
             About <span className="gradient-text">Me</span>
           </h1>
-          <p className="text-text-muted max-w-2xl mx-auto text-lg">
+          <p className="text-neutral-400 max-w-2xl mx-auto text-lg">
             Technical AI Product Manager with a passion for building products that matter.
           </p>
         </motion.div>
@@ -108,24 +108,24 @@ export default function AboutPage() {
           {/* Image placeholder */}
           <div className="relative">
             <div className="aspect-square max-w-md mx-auto relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary to-primary/50 rounded-2xl blur-2xl opacity-20" />
-              <div className="relative w-full h-full rounded-2xl bg-gradient-to-br from-card to-background border border-border flex items-center justify-center overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-white/5 rounded-2xl blur-2xl" />
+              <div className="relative w-full h-full rounded-2xl bg-gradient-to-br from-neutral-900 to-black border border-neutral-800 flex items-center justify-center overflow-hidden">
                 <div className="text-9xl font-bold gradient-text">UE</div>
               </div>
               {/* Floating elements */}
               <motion.div
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 4, repeat: Infinity }}
-                className="absolute -top-4 -right-4 bg-card border border-border rounded-xl p-3 shadow-lg"
+                className="absolute -top-4 -right-4 bg-neutral-900 border border-neutral-800 rounded-xl p-3 shadow-lg"
               >
-                <Brain className="w-6 h-6 text-primary" />
+                <Brain className="w-6 h-6 text-white" />
               </motion.div>
               <motion.div
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 4, repeat: Infinity, delay: 1 }}
-                className="absolute -bottom-4 -left-4 bg-card border border-border rounded-xl p-3 shadow-lg"
+                className="absolute -bottom-4 -left-4 bg-neutral-900 border border-neutral-800 rounded-xl p-3 shadow-lg"
               >
-                <Code className="w-6 h-6 text-primary" />
+                <Code className="w-6 h-6 text-white" />
               </motion.div>
             </div>
           </div>
@@ -135,18 +135,18 @@ export default function AboutPage() {
             <h2 className="text-3xl font-bold">
               My <span className="gradient-text">Story</span>
             </h2>
-            <div className="space-y-4 text-text-muted">
+            <div className="space-y-4 text-neutral-400">
               <p>
-                I&apos;m a Technical AI Product Manager with <span className="text-text font-medium">7+ years</span> of experience building and shipping AI products. I don&apos;t just manage - <span className="text-primary font-medium">I code</span>.
+                I&apos;m a Technical AI Product Manager with <span className="text-white font-medium">7+ years</span> of experience building and shipping AI products. I don&apos;t just manage - <span className="text-white font-medium">I code</span>.
               </p>
               <p>
                 I learned full-stack development to understand technology deeply and ship MVPs solo. This technical foundation allows me to bridge the gap between product strategy and engineering execution.
               </p>
               <p>
-                From building <span className="text-text font-medium">AfroLLM</span> for African languages to deploying <span className="text-text font-medium">GenAI Governance</span> platforms across Nigerian states, I focus on products that create real impact.
+                From building <span className="text-white font-medium">AfroLLM</span> for African languages to deploying <span className="text-white font-medium">GenAI Governance</span> platforms across Nigerian states, I focus on products that create real impact.
               </p>
               <p>
-                My approach is simple: <span className="text-primary font-medium">Build fast, ship faster, iterate based on real user feedback</span>. That&apos;s how Hont went from idea to live product with 22 users in just 2 days.
+                My approach is simple: <span className="text-white font-medium">Build fast, ship faster, iterate based on real user feedback</span>. That&apos;s how Hont went from idea to live product with 22 users in just 2 days.
               </p>
             </div>
           </div>
@@ -173,13 +173,13 @@ export default function AboutPage() {
                 whileHover={{ y: -4 }}
                 className="card p-6 text-center"
               >
-                <div className="inline-flex items-center justify-center w-14 h-14 bg-primary/10 rounded-2xl mb-4">
-                  <value.icon className="w-7 h-7 text-primary" />
+                <div className="inline-flex items-center justify-center w-14 h-14 bg-white/10 rounded-2xl mb-4">
+                  <value.icon className="w-7 h-7 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-text mb-2">
+                <h3 className="text-xl font-semibold text-white mb-2">
                   {value.title}
                 </h3>
-                <p className="text-text-muted text-sm">{value.description}</p>
+                <p className="text-neutral-400 text-sm">{value.description}</p>
               </motion.div>
             ))}
           </div>
@@ -206,27 +206,27 @@ export default function AboutPage() {
                 className="card p-6"
               >
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="p-2 bg-primary/10 rounded-lg">
-                    {category === 'AI/ML' && <Brain className="w-5 h-5 text-primary" />}
-                    {category === 'Full-Stack' && <Code className="w-5 h-5 text-primary" />}
-                    {category === 'Product' && <Users className="w-5 h-5 text-primary" />}
+                  <div className="p-2 bg-white/10 rounded-lg">
+                    {category === 'AI/ML' && <Brain className="w-5 h-5 text-white" />}
+                    {category === 'Full-Stack' && <Code className="w-5 h-5 text-white" />}
+                    {category === 'Product' && <Users className="w-5 h-5 text-white" />}
                   </div>
-                  <h3 className="text-lg font-semibold text-text">{category}</h3>
+                  <h3 className="text-lg font-semibold text-white">{category}</h3>
                 </div>
                 <div className="space-y-4">
                   {skillList.map((skill) => (
                     <div key={skill.name}>
                       <div className="flex justify-between mb-1">
-                        <span className="text-text-muted text-sm">{skill.name}</span>
-                        <span className="text-primary text-sm font-medium">{skill.level}%</span>
+                        <span className="text-neutral-400 text-sm">{skill.name}</span>
+                        <span className="text-white text-sm font-medium">{skill.level}%</span>
                       </div>
-                      <div className="h-2 bg-background rounded-full overflow-hidden">
+                      <div className="h-2 bg-neutral-900 rounded-full overflow-hidden">
                         <motion.div
                           initial={{ width: 0 }}
                           whileInView={{ width: `${skill.level}%` }}
                           viewport={{ once: true }}
                           transition={{ duration: 1, delay: 0.2 }}
-                          className="h-full bg-gradient-to-r from-primary to-primary/70 rounded-full"
+                          className="h-full bg-gradient-to-r from-white to-neutral-400 rounded-full"
                         />
                       </div>
                     </div>
@@ -258,22 +258,22 @@ export default function AboutPage() {
                 className="card p-6"
               >
                 <div className="flex items-start gap-4">
-                  <div className="p-3 bg-primary/10 rounded-xl">
-                    <Award className="w-6 h-6 text-primary" />
+                  <div className="p-3 bg-white/10 rounded-xl">
+                    <Award className="w-6 h-6 text-white" />
                   </div>
                   <div>
                     <div className="flex items-center gap-2 mb-1">
-                      <h3 className="text-lg font-semibold text-text">
+                      <h3 className="text-lg font-semibold text-white">
                         {award.title}
                       </h3>
-                      <span className="px-2 py-0.5 bg-primary/20 text-primary text-xs font-medium rounded-full">
+                      <span className="px-2 py-0.5 bg-white/10 text-white text-xs font-medium rounded-full">
                         {award.year}
                       </span>
                     </div>
-                    <p className="text-primary text-sm font-medium mb-2">
+                    <p className="text-neutral-300 text-sm font-medium mb-2">
                       {award.organization}
                     </p>
-                    <p className="text-text-muted text-sm">{award.description}</p>
+                    <p className="text-neutral-400 text-sm">{award.description}</p>
                   </div>
                 </div>
               </motion.div>
@@ -303,22 +303,22 @@ export default function AboutPage() {
                 className="card p-6"
               >
                 <div className="flex items-start gap-4">
-                  <div className="p-3 bg-primary/10 rounded-xl">
-                    <GraduationCap className="w-6 h-6 text-primary" />
+                  <div className="p-3 bg-white/10 rounded-xl">
+                    <GraduationCap className="w-6 h-6 text-white" />
                   </div>
                   <div>
                     <div className="flex items-center gap-2 mb-1">
-                      <h3 className="text-lg font-semibold text-text">
+                      <h3 className="text-lg font-semibold text-white">
                         {edu.degree}
                       </h3>
-                      <span className="px-2 py-0.5 bg-card text-text-muted text-xs font-medium rounded-full border border-border">
+                      <span className="px-2 py-0.5 bg-neutral-900 text-neutral-400 text-xs font-medium rounded-full border border-neutral-800">
                         {edu.year}
                       </span>
                     </div>
-                    <p className="text-primary text-sm font-medium mb-2">
+                    <p className="text-neutral-300 text-sm font-medium mb-2">
                       {edu.institution}
                     </p>
-                    <p className="text-text-muted text-sm">{edu.description}</p>
+                    <p className="text-neutral-400 text-sm">{edu.description}</p>
                   </div>
                 </div>
               </motion.div>
@@ -331,13 +331,13 @@ export default function AboutPage() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center p-8 bg-gradient-to-r from-primary/20 to-primary/5 rounded-2xl border border-primary/20"
+          className="text-center p-8 bg-gradient-to-r from-neutral-900 to-neutral-950 rounded-2xl border border-neutral-800"
         >
-          <Sparkles className="w-12 h-12 text-primary mx-auto mb-4" />
+          <Sparkles className="w-12 h-12 text-white mx-auto mb-4" />
           <h2 className="text-2xl font-bold mb-4">
             Want to Work <span className="gradient-text">Together?</span>
           </h2>
-          <p className="text-text-muted max-w-xl mx-auto mb-6">
+          <p className="text-neutral-400 max-w-xl mx-auto mb-6">
             I&apos;m always open to discussing new projects, speaking opportunities, or ways we can collaborate.
           </p>
           <Link href="/contact">
